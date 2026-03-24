@@ -2647,6 +2647,17 @@
       line-height: 1.5;
     }
     @media (max-width: 900px) {
+
+      .timeline-v__step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: calc(50% + 28px);
+      right: calc(-50% + 28px);
+      height: 1px;
+      background: rgba(200,169,126,0.25);
+    }
+
       .timeline-v {
         grid-template-columns: 1fr;
         gap: 0;
