@@ -712,6 +712,23 @@ a:hover {
   align-items: center;
   gap: var(--space-lg);
 }
+.nav__mobile-cta {
+  display: none;
+}
+.nav__mobile-phone {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+}
+.nav__mobile-phone:hover {
+  color: var(--color-gold);
+}
+.nav__mobile-quote {
+  min-width: 200px;
+  text-align: center;
+}
 .nav__hamburger {
   display: none;
   flex-direction: column;
@@ -753,6 +770,12 @@ a:hover {
   transform: translateY(-6.5px) rotate(-45deg);
 }
 @media (max-width: 768px) {
+  .nav--open,
+  .nav--open.nav--scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(10, 10, 10, 0.96);
+  }
   .nav__links {
     position: fixed;
     top: var(--nav-height);
@@ -766,6 +789,7 @@ a:hover {
     background-color: rgba(10, 10, 10, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    z-index: var(--z-overlay);
     transform: translateX(100%);
     transition: transform var(--transition-slow);
     pointer-events: none;
@@ -783,6 +807,13 @@ a:hover {
   }
   .nav__actions .btn-primary {
     display: none;
+  }
+  .nav__actions .nav__phone {
+    display: none;
+  }
+  .nav__mobile-cta {
+    display: list-item;
+    list-style: none;
   }
 }
 @media (min-width: 1600px) {
