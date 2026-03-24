@@ -619,6 +619,8 @@ a:hover {
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
   border-bottom: 1px solid transparent;
+  width: 100%;
+  /* border: 1px solid red; */
   transition:
     background-color 0.35s ease,
     backdrop-filter 0.35s ease,
@@ -639,10 +641,12 @@ a:hover {
   align-items: center;
   justify-content: space-between;
   height: 100%;
-  max-width: var(--container-max);
+  max-width: 85vw;
   margin-inline: auto;
-  padding-inline: var(--container-padding);
+  padding-top: 10px;
+  /* padding-inline: var(--container-padding); */
   width: 100%;
+  /* border: 1px solid red; */
 }
 .nav__logo {
   display: flex;
@@ -833,6 +837,7 @@ a:hover {
   }
   .nav__links {
     gap: 40px;
+    margin-left: -155px;
   }
   .nav__link {
     font-size: 14.5px;
@@ -860,6 +865,7 @@ a:hover {
   }
   .nav__links {
     gap: 48px;
+    margin-left: -155px;
   }
   .nav__link {
     font-size: 16px;
