@@ -3167,6 +3167,10 @@
       .sticky-mobile-cta.visible {
         transform: translateY(0);
       }
+      .nav--open ~ .nav-offset .sticky-mobile-cta,
+      .nav--open ~ .sticky-mobile-cta {
+        transform: translateY(100%) !important;
+      }
       .sticky-mobile-cta .btn {
         width: 100%;
         min-height: 50px;

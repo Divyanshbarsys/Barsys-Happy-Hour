@@ -71,12 +71,19 @@
   // --------------------------------------------------------------------------
   // Close mobile menu on nav link click
   // --------------------------------------------------------------------------
+  function closeMenu() {
+    nav.classList.remove('nav--open');
+    if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
   navLinks.forEach((link) => {
-    link.addEventListener('click', () => {
-      nav.classList.remove('nav--open');
-      if (hamburger) hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    });
+    link.addEventListener('click', closeMenu);
+  });
+
+  // Also close menu when mobile CTA items are clicked
+  document.querySelectorAll('.nav__mobile-cta a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
   });
 
   // --------------------------------------------------------------------------

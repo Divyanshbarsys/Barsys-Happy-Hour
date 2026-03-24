@@ -935,6 +935,30 @@ a:hover {
 }
 
 /* --------------------------------------------------------------------------
+   Mobile-only CTA items (phone + quote button inside nav__links)
+   -------------------------------------------------------------------------- */
+.nav__mobile-cta {
+  display: none;
+}
+
+.nav__mobile-phone {
+  color: var(--color-text-secondary);
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+}
+
+.nav__mobile-phone:hover {
+  color: var(--color-gold);
+}
+
+.nav__mobile-quote {
+  min-width: 200px;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
    Hamburger (Mobile)
    -------------------------------------------------------------------------- */
 .nav__hamburger {
@@ -987,6 +1011,15 @@ a:hover {
    Mobile Menu
    -------------------------------------------------------------------------- */
 @media (max-width: 768px) {
+  /* Remove backdrop-filter when menu is open so position:fixed children
+     are not contained by the nav (backdrop-filter creates a containing block) */
+  .nav--open,
+  .nav--open.nav--scrolled {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background-color: rgba(10, 10, 10, 0.96);
+  }
+
   .nav__links {
     position: fixed;
     top: var(--nav-height);
@@ -1000,6 +1033,7 @@ a:hover {
     background-color: rgba(10, 10, 10, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
+    z-index: var(--z-overlay);
     transform: translateX(100%);
     transition: transform var(--transition-slow);
     pointer-events: none;
@@ -1021,6 +1055,15 @@ a:hover {
 
   .nav__actions .btn-primary {
     display: none;
+  }
+
+  .nav__actions .nav__phone {
+    display: none;
+  }
+
+  .nav__mobile-cta {
+    display: list-item;
+    list-style: none;
   }
 }
 
