@@ -652,10 +652,14 @@ a:hover {
   flex-shrink: 0;
 }
 .nav__logo-mark {
-  width: 100%;
+  /* width: 100%;
   height: 6vh;
   object-fit: cover;
-  flex-shrink: 0;
+  flex-shrink: 0; */
+  width: 460px;
+    height: auto;
+    object-fit: contain;
+    max-width: 40vw;
 }
 .nav__logo-text {
   font-size: 18px;
@@ -817,10 +821,10 @@ a:hover {
   }
 }
 @media (min-width: 1600px) {
-  .nav__logo-mark {
+  /* .nav__logo-mark {
     width: 100%;
     height: 7vh;
-  }
+  } */
   .nav__logo-text {
     font-size: 22px;
   }
@@ -844,10 +848,10 @@ a:hover {
   }
 }
 @media (min-width: 2200px) {
-  .nav__logo-mark {
+  /* .nav__logo-mark {
     width: 100%;
     height: 7vh;
-  }
+  } */
   .nav__logo-text {
     font-size: 26px;
   }
