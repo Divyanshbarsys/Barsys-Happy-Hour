@@ -660,7 +660,7 @@ a:hover {
   height: 6vh;
   object-fit: cover;
   flex-shrink: 0; */
-  width: 460px;
+  width: 380px;
     height: auto;
     object-fit: contain;
     max-width: 40vw;
