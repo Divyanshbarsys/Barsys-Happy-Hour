@@ -2659,24 +2659,32 @@
     }
 
       .timeline-v {
-        grid-template-columns: repeat(1, 1fr);
+        grid-template-columns: 1fr;
+        gap: 0;
+        max-width: 400px;
+        margin: 0 auto;
       }
-    }
-    @media (max-width: 540px) {
-
+      .timeline-v__step {
+        flex-direction: row;
+        align-items: flex-start;
+        text-align: left;
+        padding-bottom: 32px;
+        padding-left: 0;
+      }
       .timeline-v__step:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 22px;
-      left: calc(50% + 28px);
-      right: calc(-50% + 28px);
-      height: 1px;
-      background: rgba(200,169,126,0.25);
-    }
-
-      .timeline-v {
-        grid-template-columns: repeat(1, 1fr);
-        gap: 20px;
+        top: 44px;
+        left: 21px;
+        right: auto;
+        width: 1px;
+        height: calc(100% - 44px);
+        background: rgba(200,169,126,0.25);
+      }
+      .timeline-v__icon {
+        margin-bottom: 0;
+        margin-right: 16px;
+      }
+      .timeline-v__content {
+        padding-top: 4px;
       }
     }
 

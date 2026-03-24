@@ -640,6 +640,7 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: clamp(24px, 4vw, 80px);
   height: 100%;
   max-width: 85vw;
   margin-inline: auto;
@@ -681,7 +682,7 @@ a:hover {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: var(--space-3xl);
+  gap: clamp(32px, 4vw, 64px);
   list-style: none;
 }
 .nav__link {
@@ -718,7 +719,8 @@ a:hover {
 .nav__actions {
   display: flex;
   align-items: center;
-  gap: var(--space-lg);
+  gap: var(--space-2xl);
+  flex-shrink: 0;
 }
 .nav__mobile-cta {
   display: none;
@@ -838,6 +840,7 @@ a:hover {
   .nav__links {
     gap: 40px;
     margin-left: -155px;
+
   }
   .nav__link {
     font-size: 14.5px;
@@ -845,7 +848,7 @@ a:hover {
     letter-spacing: 0.1em;
   }
   .nav__actions {
-    gap: 20px;
+    gap: 24px;
   }
   .nav__actions .btn--sm {
     padding: 14px 28px;
