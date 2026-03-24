@@ -62,13 +62,36 @@
 
     // ---- Mobile hamburger ----
     (function () {
+      var nav = document.querySelector('.nav');
       var hamburger = document.querySelector('.nav__hamburger');
-      var navLinks = document.querySelector('.nav__links');
-      if (!hamburger || !navLinks) return;
+      var navLinks = document.querySelectorAll('.nav__link');
+      if (!hamburger || !nav) return;
+
+      function closeMenu() {
+        nav.classList.remove('nav--open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
       hamburger.addEventListener('click', function () {
-        var expanded = hamburger.getAttribute('aria-expanded') === 'true';
-        hamburger.setAttribute('aria-expanded', !expanded);
-        navLinks.classList.toggle('nav__links--open');
+        var isOpen = nav.classList.toggle('nav--open');
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+        document.body.style.overflow = isOpen ? 'hidden' : '';
+      });
+
+      navLinks.forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.querySelectorAll('.nav__mobile-cta a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && nav.classList.contains('nav--open')) {
+          closeMenu();
+          hamburger.focus();
+        }
       });
     })();
 
