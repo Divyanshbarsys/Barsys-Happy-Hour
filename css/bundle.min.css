@@ -638,7 +638,6 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(24px, 4vw, 80px);
   height: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
@@ -678,7 +677,7 @@ a:hover {
 .nav__links {
   display: flex;
   align-items: center;
-  gap: clamp(32px, 4vw, 64px);
+  gap: clamp(24px, 3vw, 48px);
   list-style: none;
 }
 .nav__link {
